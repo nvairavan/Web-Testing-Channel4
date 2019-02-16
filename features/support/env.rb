@@ -1,7 +1,7 @@
 require 'capybara/cucumber'
 require 'rspec'
 require 'dotenv'
-require_relative '../lib/channel4'
+require_relative '../lib/channel4_site'
 
 RSpec.configure do |config|
   config.formatter = :documentation

@@ -1,6 +1,6 @@
 require_relative 'pages/channel4_homepage'
 
-class Channel4
+class Channel4Site
   def channel4_homepage
     Channel4HomePage.new
   end
