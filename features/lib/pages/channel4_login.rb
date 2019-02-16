@@ -11,6 +11,7 @@ class Channel4SignInPage
   EMAIL_ERROR_MESSAGE = 'Please enter your email address'
   PASSWORD_ERROR_MESSAGE = 'Please enter your password'
   INCORRECT_ERROR_MESSAGE = 'Your email or password is incorrect.'
+  HEADER_CSS = 'h1'
 
   def fill_in_email(email)
     fill_in(EMAIL_FIELD_ID, with: email)
@@ -34,5 +35,9 @@ class Channel4SignInPage
 
   def check_incorrect_error_message
     has_content?(INCORRECT_ERROR_MESSAGE)
+  end
+
+  def header_title
+    find(:css, HEADER_CSS).text
   end
 end
