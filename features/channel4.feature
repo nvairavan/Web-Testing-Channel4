@@ -49,7 +49,6 @@ Feature: Channel4 Login
   Scenario: Entering incorrect email and password
     Given I am on the homepage
     And I click on sign in link
-    And I enter incorrect email address details
-    And I enter incorrect password details
+    And I enter incorrect email address and password
     When I click to signin button
     Then I receive an error for incorrect email and password.

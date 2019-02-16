@@ -88,3 +88,12 @@ end
 Then("I receive an appropriate error.") do
   expect(@channel4.channel4_login.check_incorrect_error_message).to be true
 end
+
+Given("I enter incorrect email address and password") do
+  @channel4.channel4_login.fill_in_email('123456@abc.com')
+  @channel4.channel4_login.fill_in_password('abcdef')
+end
+
+Then("I receive an error for incorrect email and password.") do
+  expect(@channel4.channel4_login.check_incorrect_error_message).to be true
+end
