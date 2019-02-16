@@ -5,6 +5,7 @@ end
 Given("I click on Sign In") do
   @channel4.channel4_homepage.click_signin_link
 end
+
 When("I fill in Email") do
   @channel4.channel4_login.fill_in_email(@email)
 end
@@ -22,19 +23,20 @@ Then("I should be on the MyUser page") do
 end
 
 Given("I enter no email address details") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @channel4.channel4_login.fill_in_email('')
 end
 
 Given("I enter no password details") do
-  pending # Write code here that turns the phrase above into concrete actions
+  @channel4.channel4_login.fill_in_password('')
 end
 
-When("I try to Sign In button") do
-  pending # Write code here that turns the phrase above into concrete actions
+When("I click to Sign In button") do
+  @channel4.channel4_login.click_signin_button
 end
 
 Then("I receive an error saying Please enter your email address & password") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@channel4.channel4_login.check_email_error_message).to be true
+  expect(@channel4.channel4_login.check_password_error_message).to be true
 end
 
 Given("I click on sign in") do
@@ -45,7 +47,7 @@ Given("I enter password details") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When("I try to sign in button") do
+When("I click to sign in button") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
@@ -69,7 +71,7 @@ Given("I enter correct password details") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When("I try to signin button") do
+When("I click to signin button") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 

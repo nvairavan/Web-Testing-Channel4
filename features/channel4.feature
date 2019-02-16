@@ -13,7 +13,7 @@ Feature: Channel4 Login
     And I click on Sign In
     And I enter no email address details
     And I enter no password details
-    When I try to Sign In button
+    When I click to Sign In button
     Then I receive an error saying Please enter your email address & password
 
   Scenario: Not entering any email address
@@ -21,7 +21,7 @@ Feature: Channel4 Login
     And I click on sign in
     And I enter no email address details
     And I enter password details
-    When I try to sign in button
+    When I click to sign in button
     Then I receive an error saying Please enter your email address
 
   Scenario: Not entering any password
@@ -29,7 +29,7 @@ Feature: Channel4 Login
     And I click on sign in
     And I enter email address details
     And I enter no password details
-    When I try to sign in button
+    When I click to sign in button
     Then I receive an error saying Please enter your Password
 
   Scenario: Entering incorrect email address and credentials shows an error
@@ -37,7 +37,7 @@ Feature: Channel4 Login
     And I click on sign in
     And I enter incorrect email address details
     And I enter correct password details
-    When I try to signin button
+    When I click to signin button
     Then I receive an error saying Your email or password is incorrect.
 
   Scenario: Entering incorrect password and credentials shows an error
@@ -45,5 +45,5 @@ Feature: Channel4 Login
     And I click on sign in
     And I enter correct email address details
     And I enter incorrect password details
-    When I try to signin button
+    When I click to signin button
     Then I receive an error saying Your email or password is incorrect.
