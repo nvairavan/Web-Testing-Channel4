@@ -62,7 +62,7 @@ Feature: Channel4 Login and Signup
     When I click on register me button
     Then I should see Registration Complete.
 
-  Scenario: Signing up with correct details
+  Scenario: Trying to signup without any input
     Given I access registration page
     And I haven't entered any details
     When I click on register me button
