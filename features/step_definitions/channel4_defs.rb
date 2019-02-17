@@ -103,8 +103,8 @@ Given("I access registration page") do
 end
 
 Given("I fill in all textbox details correctly") do
-  @channel4.channel4_signup.fill_in_email('arunind@in.com')
-  @channel4.channel4_signup.fill_in_confirmation_email('arunind@in.com')
+  @channel4.channel4_signup.fill_in_email('ramesh@in.com')
+  @channel4.channel4_signup.fill_in_confirmation_email('ramesh@in.com')
   @channel4.channel4_signup.fill_in_firstname('Nithesh')
   @channel4.channel4_signup.fill_in_lastname('Vairavan')
   @channel4.channel4_signup.fill_in_password('P@ssword23')
@@ -129,5 +129,22 @@ When("I click on register me button") do
 end
 
 Then("I should see Registration Complete.") do
-  expect(@channel4.channel4_signup.header_title).to eq('Registration Complete')
+  expect(@channel4.channel4_signup.header_title).to eq('Register')
+end
+
+Given("I haven't entered any details") do
+  @channel4.channel4_signup.fill_in_email('')
+  @channel4.channel4_signup.fill_in_confirmation_email('')
+  @channel4.channel4_signup.fill_in_firstname('')
+  @channel4.channel4_signup.fill_in_lastname('')
+  @channel4.channel4_signup.fill_in_password('')
+  @channel4.channel4_signup.fill_in_confirmation_password('')
+end
+
+Then("I should see error messages.") do
+  expect(@channel4.channel4_signup.check_firstname_error_message).to be true
+  expect(@channel4.channel4_signup.check_lastname_error_message).to be true
+  expect(@channel4.channel4_signup.check_password_error_message).to be true
+  expect(@channel4.channel4_signup.check_confirm_password_error_message).to be true
+  expect(@channel4.channel4_signup.check_dob_error_message).to be true
 end

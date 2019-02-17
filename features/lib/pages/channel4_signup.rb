@@ -21,6 +21,12 @@ class Channel4SignUpPage
   REGISTER_ME_BUTTON_ID = 'capture_traditionalRegistration_tradRegSubmitButton'
   HEADER_CSS = 'h1'
 
+  FIRSTNAME_ERROR_MESSAGE = 'First name: please enter your first name'
+  LASTNAME_ERROR_MESSAGE = 'Last name: please enter your last name'
+  PASSWORD_ERROR_MESSAGE = 'Password: please enter your password'
+  CONFIRM_PASSWORD_ERROR_MESSAGE =  'Confirm password: please confirm your password'
+  DOB_ERROR_MESSAGE = "Date of birth: the date selected isn't valid"
+
   def visit_signup_page
     visit(SIGNUPPAGE_URL)
   end
@@ -83,5 +89,25 @@ class Channel4SignUpPage
 
   def header_title
     find(:css, HEADER_CSS).text
+  end
+
+  def check_firstname_error_message
+    has_content?(FIRSTNAME_ERROR_MESSAGE)
+  end
+
+  def check_lastname_error_message
+    has_content?(LASTNAME_ERROR_MESSAGE)
+  end
+
+  def check_password_error_message
+    has_content?(PASSWORD_ERROR_MESSAGE)
+  end
+
+  def check_confirm_password_error_message
+    has_content?(CONFIRM_PASSWORD_ERROR_MESSAGE)
+  end
+
+  def check_dob_error_message
+    has_content?(DOB_ERROR_MESSAGE)
   end
 end

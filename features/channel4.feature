@@ -61,3 +61,9 @@ Feature: Channel4 Login and Signup
     And I select random option from drop down
     When I click on register me button
     Then I should see Registration Complete.
+
+  Scenario: Signing up with correct details
+    Given I access registration page
+    And I haven't entered any details
+    When I click on register me button
+    Then I should see error messages.
