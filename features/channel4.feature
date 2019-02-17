@@ -1,4 +1,4 @@
-Feature: Channel4 Login
+Feature: Channel4 Login and Signup
 
   Scenario: login with valid credentials
     Given I am on the homepage
@@ -52,3 +52,12 @@ Feature: Channel4 Login
     And I enter incorrect email address and password
     When I click to signin button
     Then I receive an error for incorrect email and password.
+
+  @signup
+  Scenario: Signing up with correct details
+    Given I access registration page
+    And I fill in all textbox details correctly
+    And I use random generator for postcode and click find address button
+    And I select random option from drop down
+    When I click on register me button
+    Then I should see Registration Complete.

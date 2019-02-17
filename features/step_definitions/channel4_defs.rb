@@ -97,3 +97,37 @@ end
 Then("I receive an error for incorrect email and password.") do
   expect(@channel4.channel4_login.check_incorrect_error_message).to be true
 end
+
+Given("I access registration page") do
+  @channel4.channel4_signup.visit_signup_page
+end
+
+Given("I fill in all textbox details correctly") do
+  @channel4.channel4_signup.fill_in_email('email@email.com')
+  @channel4.channel4_signup.fill_in_confirmation_email('email@email.com')
+  @channel4.channel4_signup.fill_in_firstname('fname')
+  @channel4.channel4_signup.fill_in_lastname('lname')
+  @channel4.channel4_signup.fill_in_password('password')
+  @channel4.channel4_signup.fill_in_confirmation_password('password')
+  @channel4.channel4_signup.select_date('21')
+  @channel4.channel4_signup.select_month('June')
+  @channel4.channel4_signup.select_year('1985')
+  @channel4.channel4_signup.select_gender('Male')
+end
+
+Given("I use random generator for postcode and click find address button") do
+  @channel4.channel4_signup.fill_in_postcode(@postcode)
+  @channel4.channel4_signup.click_find_address_button
+end
+
+Given("I select random option from drop down") do
+  @channel4.channel4_signup.select_address(address)
+end
+
+When("I click on register me button") do
+  @channel4.channel4_signup.click_register_button
+end
+
+Then("I should see Registration Complete.") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
