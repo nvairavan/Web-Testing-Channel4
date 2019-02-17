@@ -73,8 +73,8 @@ class Channel4SignUpPage
     click_button(FIND_ADDRESS_BUTTON_ID)
   end
 
-  def select_address(address)
-    select(address, from: ADDRESS_DROPDOWN_ID).select_option
+  def select_address
+    first('#all4id-address-finder-select').select_option
   end
 
   def click_register_button

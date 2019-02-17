@@ -103,15 +103,15 @@ Given("I access registration page") do
 end
 
 Given("I fill in all textbox details correctly") do
-  @channel4.channel4_signup.fill_in_email('email@email.com')
-  @channel4.channel4_signup.fill_in_confirmation_email('email@email.com')
-  @channel4.channel4_signup.fill_in_firstname('fname')
-  @channel4.channel4_signup.fill_in_lastname('lname')
-  @channel4.channel4_signup.fill_in_password('password')
-  @channel4.channel4_signup.fill_in_confirmation_password('password')
+  @channel4.channel4_signup.fill_in_email('arunind@in.com')
+  @channel4.channel4_signup.fill_in_confirmation_email('arunind@in.com')
+  @channel4.channel4_signup.fill_in_firstname('Nithesh')
+  @channel4.channel4_signup.fill_in_lastname('Vairavan')
+  @channel4.channel4_signup.fill_in_password('P@ssword23')
+  @channel4.channel4_signup.fill_in_confirmation_password('P@ssword23')
   @channel4.channel4_signup.select_date('21')
   @channel4.channel4_signup.select_month('June')
-  @channel4.channel4_signup.select_year('1985')
+  @channel4.channel4_signup.select_year('1981')
   @channel4.channel4_signup.select_gender('Male')
 end
 
@@ -121,7 +121,7 @@ Given("I use random generator for postcode and click find address button") do
 end
 
 Given("I select random option from drop down") do
-  @channel4.channel4_signup.select_address(address)
+  @channel4.channel4_signup.select_address
 end
 
 When("I click on register me button") do
@@ -129,5 +129,5 @@ When("I click on register me button") do
 end
 
 Then("I should see Registration Complete.") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@channel4.channel4_signup.header_title).to eq('Registration Complete')
 end
