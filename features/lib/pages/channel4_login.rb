@@ -3,8 +3,6 @@ require 'capybara/dsl'
 class Channel4SignInPage
   include Capybara::DSL
 
-  attr_accessor :error1, :error2, :error3
-
   EMAIL_FIELD_ID = 'capture_first_signIn_emailAddress'
   PASSWORD_FIELD_ID = 'capture_first_signIn_password'
   SIGN_IN_BUTTON = 'capture_first_signIn_signInButton'
