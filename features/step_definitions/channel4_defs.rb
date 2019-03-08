@@ -103,8 +103,8 @@ Given("I access registration page") do
 end
 
 Given("I fill in all textbox details correctly") do
-  @channel4.channel4_signup.fill_in_email('rames1h.in@in.com')
-  @channel4.channel4_signup.fill_in_confirmation_email('rames1h.in@in.com')
+  @channel4.channel4_signup.fill_in_email('rames31h.in@in.com')
+  @channel4.channel4_signup.fill_in_confirmation_email('rames31h.in@in.com')
   @channel4.channel4_signup.fill_in_firstname('Nithesh')
   @channel4.channel4_signup.fill_in_lastname('Vairavan')
   @channel4.channel4_signup.fill_in_password('P@ssword23')
